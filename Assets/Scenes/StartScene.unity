@@ -1259,6 +1259,7 @@ GameObject:
   - component: {fileID: 1007225600}
   - component: {fileID: 1007225602}
   - component: {fileID: 1007225601}
+  - component: {fileID: 1007225603}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1354,6 +1355,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1007225603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007225599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cb9badea501444eb1ceb17e26244f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1031944854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3073,6 +3087,7 @@ GameObject:
   - component: {fileID: 1832237406}
   - component: {fileID: 1832237408}
   - component: {fileID: 1832237407}
+  - component: {fileID: 1832237409}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -4848,6 +4863,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1832237409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832237405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 59e13a1aec295044da48908d637e78d7, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
