@@ -1,0 +1,76 @@
+{
+    "name": "FirstGamePlayer",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "a13f813b-5390-4d85-beb5-c3543141d5d8",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "61edf64b-18fb-4b36-aa4d-87d76acd254a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Value",
+                    "id": "03556e52-0bfd-4abf-acea-8ffe2ccb04ad",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "49a9c1cd-9728-465b-ae44-9e8cc549214d",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39b372c6-f1aa-43bb-88fb-3d6badb7c4c4",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "Scale(factor=-1)",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd5d468c-91be-4612-9d32-6e10e9e46531",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "Scale",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8452dba-5b4c-48fb-898e-d9a0edaad1fc",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "Scale(factor=0)",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

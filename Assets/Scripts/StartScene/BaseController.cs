@@ -15,12 +15,22 @@ public abstract class BaseController : MonoBehaviour
     public Vector2 LookDirection { get => lookDirection; }
     // 추상 클래스로 다른 플레이어 몬스터가 쓸 수 있게끔
     // awake, start, update, fixedupdate
-    // 이동, 시선처리,( 공격, 넉백, 사망)
+    // 이동, 시선처리,( 공격, 넉백, 사망 - 여유잇으면)
+
+    [SerializeField] private int playerSpeed;
+    public int PlyaerSpeed {  get => playerSpeed; }
+
+    Animations animations;
+
+    protected bool isJumping;
+
+
 
     protected virtual void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animations = GetComponent<Animations>();
     }
 
     protected virtual void Start()
@@ -30,24 +40,36 @@ public abstract class BaseController : MonoBehaviour
 
     protected virtual void Update()
     {
-
+        Look(lookDirection);
+        Jump();
     }
 
     protected virtual void FixedUpdate()
     {
-
+        Move(moveDirection);
     }
 
     private void Move(Vector2 direction)
     {
-        direction = direction; // 속도
+        direction = direction * playerSpeed;
 
         rigidbody.velocity = direction;
+        animations.IsMove(direction);
     }
 
     private void Look(Vector2 direction)
     {
+        bool isRIght = direction.x > 0;
 
+        spriteRenderer.flipX = isRIght ? false: true;
     }
 
+    private void Jump()
+    {
+        if (isJumping)
+        {
+            animations.IsJump();
+            isJumping = false;
+        }
+    }
 }
