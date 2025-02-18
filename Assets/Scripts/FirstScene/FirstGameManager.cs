@@ -41,4 +41,9 @@ public class FirstGameManager : MonoBehaviour
     {
 
     }
+
+    private void GodMode()
+    {
+
+    }
 }

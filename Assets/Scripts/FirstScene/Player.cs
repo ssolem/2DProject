@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        
+        GodMode();
     }
 
     private void FixedUpdate()
@@ -135,5 +135,12 @@ public class Player : MonoBehaviour
         {
             canJump = false;
         }
+    }
+
+    private void GodMode()
+    {
+        bool god = Input.GetKeyDown(KeyCode.Tab);
+        if (god) 
+            transform.position = new Vector3(70, 0, 0);
     }
 }
