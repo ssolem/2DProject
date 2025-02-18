@@ -1,0 +1,34 @@
+{
+    "name": "Goal Action",
+    "maps": [
+        {
+            "name": "Goal",
+            "id": "75c555e3-f660-4bed-a122-04ce8fa95d56",
+            "actions": [
+                {
+                    "name": "End",
+                    "type": "Value",
+                    "id": "ffc8fe83-8953-4bd4-aa3e-ec25b356888a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "db7bb5ab-d29c-407f-8abf-f7014c76c441",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "End",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
