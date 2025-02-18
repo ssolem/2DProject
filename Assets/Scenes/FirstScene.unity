@@ -3024,6 +3024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2097048240}
   playerSpeed: 0.08
+  jumpPower: {x: 0, y: 5, z: 0}
   playerInput: {fileID: 1339867033}
   moveAction:
     m_Name: Move

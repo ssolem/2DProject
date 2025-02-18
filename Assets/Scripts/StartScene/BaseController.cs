@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseController : MonoBehaviour
 {
-    protected Rigidbody2D rigidbody;
+    protected Rigidbody2D rigidBody;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
     
@@ -28,7 +28,7 @@ public abstract class BaseController : MonoBehaviour
 
     protected virtual void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animations = GetComponent<Animations>();
     }
@@ -53,7 +53,7 @@ public abstract class BaseController : MonoBehaviour
     {
         direction = direction * playerSpeed;
 
-        rigidbody.velocity = direction;
+        rigidBody.velocity = direction;
         animations.IsMove(direction);
     }
 

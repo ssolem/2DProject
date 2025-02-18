@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rigidBody;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -18,19 +18,23 @@ public class Player : MonoBehaviour
     [SerializeField] private float playerSpeed;
     public float PlayerSpeed { get => playerSpeed; }
 
+    [SerializeField] private Vector3 jumpPower;
+
+    public Vector3 JumpPower { get => jumpPower; }
+
     Animations animations;
 
     public PlayerInput playerInput;
     public InputAction moveAction;
     public InputAction jumpAction;
 
-    Camera camera;
+    Camera mainCamera;
 
     private bool isJumping = false;
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animations = GetComponent<Animations>();
 
@@ -40,7 +44,7 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
-        camera = Camera.main;
+        mainCamera = Camera.main;
     }
 
     private void Update()
@@ -86,6 +90,7 @@ public class Player : MonoBehaviour
     {
         if (isJumping)
         {
+            rigidBody.velocity = jumpPower;
             animations.IsJump();
             isJumping = false;
         }
@@ -95,12 +100,6 @@ public class Player : MonoBehaviour
     {
         moveDirection = inputValue.Get<float>();
         Debug.Log(moveDirection);
-        if(moveDirection != 1 && moveDirection != -1)
-        {
-            moveDirection = 0;
-            Debug.Log(moveDirection);
-
-        }
     }
 
     void OnJump(InputValue inputValue)

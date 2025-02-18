@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : BaseController
 {
-    Camera camera;
+    Camera mainCamera;
 
     protected override void Start()
     {
         base.Start();
-        camera = Camera.main;
+        mainCamera = Camera.main;
     }
     void OnMove(InputValue inputValue)
     {
@@ -20,7 +20,7 @@ public class PlayerController : BaseController
     void OnLook(InputValue inputValue)
     {
         Vector2 mousePosition = inputValue.Get<Vector2>();
-        Vector2 worldPosition = camera.ScreenToWorldPoint(mousePosition);
+        Vector2 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
         lookDirection = worldPosition - (Vector2)transform.position;
             
     }
