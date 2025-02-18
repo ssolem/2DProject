@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "61edf64b-18fb-4b36-aa4d-87d76acd254a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
@@ -37,37 +37,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "39b372c6-f1aa-43bb-88fb-3d6badb7c4c4",
+                    "name": "1D Axis",
+                    "id": "a6133f90-f603-409d-9117-6f8562b1a980",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "3b262e46-2f2f-4d56-ba30-830649ce692a",
                     "path": "<Keyboard>/a",
                     "interactions": "",
-                    "processors": "Scale(factor=-1)",
+                    "processors": "",
                     "groups": "",
                     "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "bd5d468c-91be-4612-9d32-6e10e9e46531",
+                    "name": "positive",
+                    "id": "59080616-e9a2-455a-8bda-48fc349a9c29",
                     "path": "<Keyboard>/d",
                     "interactions": "",
-                    "processors": "Scale",
+                    "processors": "",
                     "groups": "",
                     "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c8452dba-5b4c-48fb-898e-d9a0edaad1fc",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "Scale(factor=0)",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 }
             ]
         }

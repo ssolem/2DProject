@@ -2870,9 +2870,9 @@ GameObject:
   - component: {fileID: 1339867037}
   - component: {fileID: 1339867036}
   - component: {fileID: 1339867038}
-  - component: {fileID: 1339867034}
   - component: {fileID: 1339867033}
   - component: {fileID: 1339867032}
+  - component: {fileID: 1339867039}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2922,20 +2922,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1339867034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339867031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39cb9badea501444eb1ceb17e26244f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 2097048240}
-  playerSpeed: 5
 --- !u!50 &1339867036
 Rigidbody2D:
   serializedVersion: 4
@@ -2951,7 +2937,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -3024,6 +3010,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.95}
   m_EdgeRadius: 0
+--- !u!114 &1339867039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339867031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59528bf205051724cbbeb3fa3f89ddda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2097048240}
+  playerSpeed: 0.08
+  playerInput: {fileID: 1339867033}
+  moveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 05051e37-918c-4e66-9e83-49bcd314ee84
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  jumpAction:
+    m_Name: Jump
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: cc199f65-06f0-40a9-bcae-659081e424d1
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &1549073528
 GameObject:
   m_ObjectHideFlags: 0
