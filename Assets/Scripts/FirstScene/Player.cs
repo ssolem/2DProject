@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     Camera mainCamera;
 
     private bool isJumping = false;
+    private bool canJump = true;
 
     private void Awake()
     {
@@ -88,11 +89,16 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (isJumping)
+        if (!canJump)
+            return;
+        else
         {
-            rigidBody.velocity = jumpPower;
-            animations.IsJump();
-            isJumping = false;
+            if (isJumping)
+            {
+                rigidBody.velocity = jumpPower;
+                animations.IsJump();
+                isJumping = false;
+            }
         }
     }
 
@@ -105,5 +111,29 @@ public class Player : MonoBehaviour
     void OnJump(InputValue inputValue)
     {
         isJumping = jumpAction.WasPressedThisFrame();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            canJump = true;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            canJump = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            canJump = false;
+        }
     }
 }
