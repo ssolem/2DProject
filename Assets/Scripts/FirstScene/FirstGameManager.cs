@@ -7,9 +7,13 @@ public class FirstGameManager : MonoBehaviour
 
     private FirstUIManager uiManager;
 
-    private float playTime { get; set; }
+    private float playTime;
+
+    public float PlayTime { get { return playTime; } }
 
     public bool isPlayedOnce = false;
+
+    public bool gameOver = true;
 
     private void Awake()
     {
@@ -33,11 +37,14 @@ public class FirstGameManager : MonoBehaviour
 
     void Update()
     {
+        if (gameOver)
+            return;
         playTime += Time.deltaTime;
     }
 
     public void GameStart()
     {
+        gameOver = false;
         Time.timeScale = 1;
         playTime = 0;
         uiManager.StartGame();
@@ -45,7 +52,9 @@ public class FirstGameManager : MonoBehaviour
 
     public void GameOver()
     {
-
+        gameOver=true;
+        Time.timeScale = 0;
+        uiManager.GameOver();
     }
 
     public void Restart()
