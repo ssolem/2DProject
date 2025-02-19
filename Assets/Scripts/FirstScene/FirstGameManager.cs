@@ -7,6 +7,10 @@ public class FirstGameManager : MonoBehaviour
 
     private FirstUIManager uiManager;
 
+    private Player player;
+
+    Animations animations;
+
     private float playTime;
 
     public float PlayTime { get { return playTime; } }
@@ -27,6 +31,9 @@ public class FirstGameManager : MonoBehaviour
         }
 
         uiManager = FindObjectOfType<FirstUIManager>();
+        player = FindObjectOfType<Player>();
+        animations = FindObjectOfType<Animations>();
+
         Time.timeScale = 0;
     }
 
@@ -59,7 +66,14 @@ public class FirstGameManager : MonoBehaviour
 
     public void Restart()
     {
-
+        gameOver = false;
+        Time.timeScale = 1;
+        playTime = 0;
+        //플레이어 위치 변경
+        player.GetInitLocation();
+        //목표 다시 원상복구
+        animations.RestartGame();
+        uiManager.StartGame();
     }
 
     public void GameScore()

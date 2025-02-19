@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
 
     public Vector3 JumpPower { get => jumpPower; }
 
+    public Vector3 initLocation;
+
     Animations animations;
 
     public PlayerInput playerInput;
@@ -41,6 +43,8 @@ public class Player : MonoBehaviour
 
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
+
+        initLocation = transform.position;
        
     }
     private void Start()
@@ -142,5 +146,10 @@ public class Player : MonoBehaviour
         bool god = Input.GetKeyDown(KeyCode.Tab);
         if (god) 
             transform.position = new Vector3(70, 0, 0);
+    }
+
+    public void GetInitLocation()
+    {
+        transform.position = initLocation;
     }
 }

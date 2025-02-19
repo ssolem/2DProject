@@ -10,6 +10,7 @@ public class Animations : MonoBehaviour
     private static readonly int IsDamaged = Animator.StringToHash("IsDamage");
     private static readonly int IsNearGoal = Animator.StringToHash("IsNear");
     private static readonly int IsEnding = Animator.StringToHash("IsEnd");
+    private static readonly int RestartingGame = Animator.StringToHash("RestartGame");
 
     protected Animator animator;
 
@@ -42,6 +43,11 @@ public class Animations : MonoBehaviour
     public void IsEnd()
     {
         animator.SetTrigger(IsEnding);
+    }
+
+    public void RestartGame()
+    {
+        animator.SetTrigger(RestartingGame);
     }
 
 }

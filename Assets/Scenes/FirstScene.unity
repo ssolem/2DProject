@@ -359,8 +359,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278255562
+  m_fontColor: {r: 0.79215693, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5373,8 +5373,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5607,6 +5607,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2097048240}
   playerSpeed: 0.08
   jumpPower: {x: 0, y: 8, z: 0}
+  initLocation: {x: 0, y: 0, z: 0}
   playerInput: {fileID: 1339867033}
   moveAction:
     m_Name: Move
@@ -5692,8 +5693,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278255562
+  m_fontColor: {r: 0.7909144, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5935,6 +5936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebcbe78e09b0314dab0f03a004e34c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bestTimeText: {fileID: 2100758944}
+  scoreTimeText: {fileID: 254354329}
+  restartButton: {fileID: 1891556350}
+  exitButton: {fileID: 973194741}
 --- !u!1 &1485212244
 GameObject:
   m_ObjectHideFlags: 0
@@ -8366,8 +8371,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
