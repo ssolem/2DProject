@@ -22,12 +22,18 @@ public class StartUI : BaseUI
 
     public void OnClickStart()
     {
-
+        if (!FirstGameManager.Instance.isPlayedOnce)
+        {
+            FirstGameManager.Instance.isPlayedOnce = true;
+            uiManager.HelpGame();
+        }
+        else
+            FirstGameManager.Instance.GameStart();
     }
 
     public void OnClickEnd()
     {
-
+        //¾À µ¹¾Æ°¡±â
     }
    
 }
