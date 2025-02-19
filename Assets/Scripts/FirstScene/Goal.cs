@@ -57,7 +57,11 @@ public class Goal : MonoBehaviour
             return;
         else
         {
-
+            if (isEnding)
+            {
+                animations.IsEnd();
+                FirstGameManager.Instance.GameOver();
+            }
         }
     }
 

@@ -22,22 +22,22 @@ public class FirstGameManager : MonoBehaviour
         
     }
 
-    private void GameStart()
+    public void GameStart()
     {
 
     }
 
-    private void GameOver()
+    public void GameOver()
     {
 
     }
 
-    private void Restart()
+    public void Restart()
     {
 
     }
 
-    private void GameScore()
+    public void GameScore()
     {
 
     }
