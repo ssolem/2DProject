@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform player;
+
+    public int mapStart;
+    public int mapFinal;
+
     void Start()
     {
-        
+    
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float playerX = player.position.x;
+        float camX = transform.position.x;
+
+        if(playerX > camX + 0.1f)
+        {
+            camX = playerX - 0.1f;
+        }
+        else if(playerX < camX - 0.1f)
+        {
+            camX = playerX + 0.1f;
+        }
+
+        camX = Mathf.Clamp(camX, mapStart, mapFinal);
+
+        transform.position = new Vector3(camX, transform.position.y, transform.position.z);
     }
 }
