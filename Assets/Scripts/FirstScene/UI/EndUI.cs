@@ -7,12 +7,22 @@ using UnityEngine.UI;
 
 public class EndUI : BaseUI
 {
+
+    public float score;
+    public float bestScore = 0;
+
+    private const string BestScoreKey = "bestScore";
+
     public TextMeshProUGUI bestTimeText;
     public TextMeshProUGUI scoreTimeText;
 
     [SerializeField] private Button restartButton;
     [SerializeField] private Button exitButton;
 
+    private void Start()
+    {
+        bestScore = PlayerPrefs.GetFloat(BestScoreKey);
+    }
     public override void Init(FirstUIManager uiManager)
     {
         base.Init(uiManager);
@@ -35,6 +45,8 @@ public class EndUI : BaseUI
     {
         //¾À µ¹¾Æ°¡±â
         SceneManager.LoadScene("StartScene");
+        Debug.Log($"New Best Score Saved: {bestScore}");
+
     }
 
     public void Update()
@@ -50,18 +62,16 @@ public class EndUI : BaseUI
 
     public void BestScore()
     {
-        float score = 0;
-        float bestScore = 0;
+        score = FirstGameManager.Instance.PlayTime;
 
-        if(!float.TryParse(scoreTimeText.text,out score))
-            score = 0;
-        if(!float.TryParse(bestTimeText.text, out bestScore))
-            bestScore = 0;
-
-        if(score < bestScore || bestScore == 0)
+        if (score < bestScore || bestScore == 0)
         {
             bestScore = score;
+            PlayerPrefs.SetFloat(BestScoreKey, bestScore);
+            PlayerPrefs.Save();
         }
+
+
 
         bestTimeText.text = bestScore.ToString("N2");
     }

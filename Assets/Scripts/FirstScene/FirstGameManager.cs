@@ -16,6 +16,9 @@ public class FirstGameManager : MonoBehaviour
     public float PlayTime { get { return playTime; } }
 
     public bool isPlayedOnce = false;
+    public int playedOnce = 0;
+
+    private const string PlayedOnceKey = "playedOnce";
 
     public bool gameOver = true;
 
@@ -39,7 +42,7 @@ public class FirstGameManager : MonoBehaviour
 
     void Start()
     {
-
+        isPlayedOnce = PlayerPrefs.GetInt(PlayedOnceKey, 0) == 1 ? true : false;
     }
 
     void Update()
@@ -49,6 +52,12 @@ public class FirstGameManager : MonoBehaviour
         playTime += Time.deltaTime;
     }
 
+    public void IsPlayedSave()
+    {
+        playedOnce = 1;
+        PlayerPrefs.SetInt(PlayedOnceKey, playedOnce);
+        PlayerPrefs.Save();
+    }
     public void GameStart()
     {
         gameOver = false;

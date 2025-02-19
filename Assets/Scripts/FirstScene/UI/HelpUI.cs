@@ -40,7 +40,8 @@ public class HelpUI : BaseUI
         if (!FirstGameManager.Instance.isPlayedOnce)
         {
             FirstGameManager.Instance.isPlayedOnce = true;
-            FirstGameManager.Instance.GameStart();
+            FirstGameManager.Instance.IsPlayedSave();
+            FirstGameManager.Instance.GameStart();            
         }
         else
         {
