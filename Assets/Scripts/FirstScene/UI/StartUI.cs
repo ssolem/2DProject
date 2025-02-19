@@ -24,7 +24,6 @@ public class StartUI : BaseUI
     {
         if (!FirstGameManager.Instance.isPlayedOnce)
         {
-            FirstGameManager.Instance.isPlayedOnce = true;
             uiManager.HelpGame();
         }
         else

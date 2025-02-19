@@ -17,15 +17,18 @@ public class FirstGameManager : MonoBehaviour
         {
             gameManager = this;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         uiManager = FindObjectOfType<FirstUIManager>();
-        
+        Time.timeScale = 0;
     }
 
     void Start()
     {
-        Time.timeScale = 0;
-        playTime = 0;
+
     }
 
     void Update()
@@ -35,7 +38,7 @@ public class FirstGameManager : MonoBehaviour
 
     public void GameStart()
     {
-        Time.timeScale = 1.0f;
+        Time.timeScale = 1;
         playTime = 0;
         uiManager.StartGame();
     }
