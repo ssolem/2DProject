@@ -7,6 +7,7 @@ public class Animations : MonoBehaviour
 {
     private static readonly int IsMoving = Animator.StringToHash("IsMove");
     private static readonly int IsJumping = Animator.StringToHash("IsJump");
+    private static readonly int IsJumping2 = Animator.StringToHash("IsJump2");
     private static readonly int IsDamaged = Animator.StringToHash("IsDamage");
     private static readonly int IsNearGoal = Animator.StringToHash("IsNear");
     private static readonly int IsEnding = Animator.StringToHash("IsEnd");
@@ -33,6 +34,12 @@ public class Animations : MonoBehaviour
     {
         animator.SetTrigger(IsJumping);
     }
+
+    public void IsJump2()
+    {
+        animator.SetTrigger(IsJumping2);
+    }
+
 
     // FirstScene
     public void NearGoal(bool near)

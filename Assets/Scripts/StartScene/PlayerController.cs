@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : BaseController
 {
@@ -11,6 +12,7 @@ public class PlayerController : BaseController
     {
         base.Start();
         mainCamera = Camera.main;
+        Time.timeScale = 1.0f;
     }
     void OnMove(InputValue inputValue)
     {
@@ -31,6 +33,14 @@ public class PlayerController : BaseController
         if(inputValue.isPressed)
         {
             isJumping = inputValue.isPressed;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Door"))
+        {
+            SceneManager.LoadScene("FirstScene");
         }
     }
 }

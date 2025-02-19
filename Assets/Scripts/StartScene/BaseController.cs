@@ -68,7 +68,7 @@ public abstract class BaseController : MonoBehaviour
     {
         if (isJumping)
         {
-            animations.IsJump();
+            animations.IsJump2();
             isJumping = false;
         }
     }

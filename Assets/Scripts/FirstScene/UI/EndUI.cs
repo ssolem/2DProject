@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndUI : BaseUI
@@ -33,6 +34,7 @@ public class EndUI : BaseUI
     public void OnClickExitButton()
     {
         //¾À µ¹¾Æ°¡±â
+        SceneManager.LoadScene("StartScene");
     }
 
     public void Update()
